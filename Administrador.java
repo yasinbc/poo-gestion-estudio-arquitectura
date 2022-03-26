@@ -133,20 +133,28 @@ public class Administrador
     public void asignarUsuario(){
         String opcion = "";
         int opcionInt = 0;
-        String opcionAux = "";
+        String opcionProf = "";
+        int opcionIntProf = 0;
         
         mostrarUsuarios();
         opcion = JOptionPane.showInputDialog("Observe la lista de usuarios por pantalla \ne introduzca su indice para elegir usuario.");
         opcionInt = Integer.parseInt(opcion);
+        opcionProf = JOptionPane.showInputDialog("\n1-Arquitecto \n2-Aparejador \n3-Contable");
+        opcionIntProf = Integer.parseInt(opcionProf);
+    
         
         for(String index:usuarios){
-            if(usuarios.indexOf(index) == opcionInt){
-                asignacionProfesional.add(index);
+            if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 1){
+                asignacionProfesional.add(index+", Arquitecto");
+            }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 2){
+                asignacionProfesional.add(index+", Aaparejador");
+            }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 3){
+                asignacionProfesional.add(index+", Contable");
             }
         }
         
-        opcion = JOptionPane.showInputDialog("\n1-Arquitecto \n2-Aparejador \n3-Contable");
-        opcionInt = Integer.parseInt(opcion);
+        //opcion = JOptionPane.showInputDialog("\n1-Arquitecto \n2-Aparejador \n3-Contable");
+        //opcionInt = Integer.parseInt(opcion);
         
         mostrarProfesionales();
     }
@@ -158,7 +166,7 @@ public class Administrador
         }else{//Lista a los usuarios y los ordena con un indice
             System.out.println("Lista de profesionales: ");   
             System.out.println("ID         Nombre Profesionales");
-            for(String index:usuarios){
+            for(String index:asignacionProfesional){
                 System.out.println(asignacionProfesional.indexOf(index) +"          "+ index);//asigna un indice a cada usuario por orden de registro
             }
         }
