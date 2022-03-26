@@ -146,6 +146,7 @@ public class Administrador
         for(String index:usuarios){
             if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 1){
                 asignacionProfesional.add(index+", Arquitecto");
+                //if(INTRODUCIR CONDICION NO REPETIR
             }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 2){
                 asignacionProfesional.add(index+", Aaparejador");
             }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 3){
