@@ -127,4 +127,25 @@ public class Administrador
             System.out.println(it.next());
         }
     }
+    
+    public void asignarUsuario(){
+        String opcion = "";
+        int opcionInt = 0;
+        String opcionAux = "";
+        
+        mostrarUsuarios();
+        opcion = JOptionPane.showInputDialog("Observe la lista de usuarios por pantalla \ne introduzca su indice para elegir usuario.");
+        opcionInt = Integer.parseInt(opcion);
+        
+        
+        
+        opcion = JOptionPane.showInputDialog("\n1-Arquitecto \n2-Aparejador \n3-Contable");
+        opcionInt = Integer.parseInt(opcion);
+        
+        
+        
+        
+        mostrarUsuarios();
+    }
+    
 }
