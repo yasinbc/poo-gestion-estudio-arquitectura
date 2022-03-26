@@ -11,6 +11,7 @@ import java.io.*;
 public class Administrador
 {
     public ArrayList<String> usuarios; //Contiene todos lo registros de los usuarios
+    public ArrayList<String> asignacionProfesional;
     public Iterator<String> it;
 
     /**
@@ -19,6 +20,7 @@ public class Administrador
     public Administrador()
     {
         usuarios = new ArrayList<String>();
+        asignacionProfesional = new ArrayList<String>();
     }
     
     //añade los usuarios dentro de la ArrayList
@@ -137,15 +139,28 @@ public class Administrador
         opcion = JOptionPane.showInputDialog("Observe la lista de usuarios por pantalla \ne introduzca su indice para elegir usuario.");
         opcionInt = Integer.parseInt(opcion);
         
-        
+        for(String index:usuarios){
+            if(usuarios.indexOf(index) == opcionInt){
+                asignacionProfesional.add(index);
+            }
+        }
         
         opcion = JOptionPane.showInputDialog("\n1-Arquitecto \n2-Aparejador \n3-Contable");
         opcionInt = Integer.parseInt(opcion);
         
-        
-        
-        
-        mostrarUsuarios();
+        mostrarProfesionales();
     }
     
+    public void mostrarProfesionales(){
+        int longPro = asignacionProfesional.size();
+        if(longPro<1){//si no hay usuarios registrados lanza un mensaje notificandolo
+            System.out.println("Todavía no hay profesionales Registrados en el sistema");
+        }else{//Lista a los usuarios y los ordena con un indice
+            System.out.println("Lista de profesionales: ");   
+            System.out.println("ID         Nombre Profesionales");
+            for(String index:usuarios){
+                System.out.println(asignacionProfesional.indexOf(index) +"          "+ index);//asigna un indice a cada usuario por orden de registro
+            }
+        }
+    }
 }
