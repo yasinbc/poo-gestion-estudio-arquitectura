@@ -81,6 +81,9 @@ public class Administrador
     public void altaUsuario(){
         String opcion = "";//variable que almacenará al usuario en la lista
         String opcionAux = "";//variable auxiliar que almacenará otro nombre en caso de que el introducido este repetido en ArrayList
+        String opcionCategoria = "";
+        int opcionCatInt = 0;
+        
         opcion = JOptionPane.showInputDialog("Introduzca nombre de usuario a registar: ");//introduce y almacena opcion
         
         if(usuarios.contains(opcion)){//si se repite el usuario en ArrayList
@@ -96,6 +99,29 @@ public class Administrador
             System.out.println(opcion+" dado de alta en el sistema");//muestra en consola nuevo usuario ingresado
         }
         
+        
+        /*
+        opcionCategoria = JOptionPane.showInputDialog("Introduzca categoría \n1-Usuario del sitema \n2-Cliente");
+        opcionCatInt = Integer.parseInt(opcionCategoria);
+        
+        for(String index:usuarios){
+            if(usuarios.indexOf(index) == opcionCatInt && opcionCatInt == 1){
+                usuarios.add(index+" , usuario sistema");
+            }else if(usuarios.indexOf(index) == opcionCatInt && opcionCatInt == 2){
+                usuarios.add(index+" ,Cliente");
+            }
+        }*/
+        /*
+           for(String index:usuarios){
+            if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 1){
+                asignacionProfesional.add(index+", Arquitecto");
+            }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 2){
+                asignacionProfesional.add(index+", Aaparejador");
+            }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 3){
+                asignacionProfesional.add(index+", Contable");
+            }
+        }
+           */
         //guardarUsuarios(opcion);//introduce nuevo usuario en la lista
         //System.out.println(opcion+" dado de alta en el sistema");//muestra en consola nuevo usuario ingresado
     }
@@ -116,11 +142,21 @@ public class Administrador
         //introduce el numero de usuario el cual modificará
         nuevoUsuario = JOptionPane.showInputDialog("Introduzca el nuevo nombre de usuario: ");
         
-        //cambia el usuario que estaba por el nuevo introducido
-        usuarios.set(opcionInt, nuevoUsuario);//primer parametro introduce posicion del usuario, segundo parametro introduce nuevo usuario
+        if(usuarios.contains(nuevoUsuario)){
+            System.out.println("usuarios ya existente");
+        }else{
+            //cambia el usuario que estaba por el nuevo introducido
+            usuarios.set(opcionInt, nuevoUsuario);//primer parametro introduce posicion del usuario, segundo parametro introduce nuevo usuario
         
-        System.out.println("");
-        mostrarUsuarios();//muestra los usuarios actuales, incluido el que se ha modificado121212
+            System.out.println("");
+            mostrarUsuarios();//muestra los usuarios actuales, incluido el que se ha modificado121212
+        }
+        
+        //cambia el usuario que estaba por el nuevo introducido
+        //usuarios.set(opcionInt, nuevoUsuario);//primer parametro introduce posicion del usuario, segundo parametro introduce nuevo usuario
+        
+        //System.out.println("");
+        //mostrarUsuarios();//muestra los usuarios actuales, incluido el que se ha modificado121212
     }
     
     private void muestraUsuariosSinIndex(){
