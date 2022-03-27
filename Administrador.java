@@ -39,7 +39,7 @@ public class Administrador
             System.out.println("Todavía no hay usuarios Registrados en el sistema");
         }else{//Lista a los usuarios y los ordena con un indice
             System.out.println("Lista de usuarios: ");   
-            System.out.println("ID         Nombre Usuarios");
+            System.out.println("ID         Usuarios");
             for(String index:usuarios){
                 System.out.println(usuarios.indexOf(index) +"          "+ index);//asigna un indice a cada usuario por orden de registro
             }
@@ -146,7 +146,6 @@ public class Administrador
         for(String index:usuarios){
             if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 1){
                 asignacionProfesional.add(index+", Arquitecto");
-                //if(INTRODUCIR CONDICION NO REPETIR
             }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 2){
                 asignacionProfesional.add(index+", Aaparejador");
             }else if(usuarios.indexOf(index) == opcionInt && opcionIntProf == 3){
@@ -166,7 +165,7 @@ public class Administrador
             System.out.println("Todavía no hay profesionales Registrados en el sistema");
         }else{//Lista a los usuarios y los ordena con un indice
             System.out.println("Lista de profesionales: ");   
-            System.out.println("ID         Nombre Profesionales");
+            System.out.println("ID         Profesionales");
             for(String index:asignacionProfesional){
                 System.out.println(asignacionProfesional.indexOf(index) +"          "+ index);//asigna un indice a cada usuario por orden de registro
             }
